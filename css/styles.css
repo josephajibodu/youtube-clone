@@ -1,0 +1,199 @@
+:root {
+    --black: #030303;
+    --grey: #606060;
+    --accent: rgb(0, 0, 0, 5%);
+    --red: #ff0000;
+    --red-text: #c00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Georgia, 'Times New Roman', Times, serif;
+    color: var(--grey);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+#body {
+    display: flex;
+    height: 100%;
+}
+
+aside {
+    background-color: red;
+    height: 100%;
+    width: 230px;
+}
+
+#content {
+    height: 100%;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+
+    background-color: chartreuse;
+}
+
+.svg-logo {
+    height: 24px;
+    width: 90px;
+    margin-left: 12px;
+}
+
+#locale {
+    position: relative;
+    top: -4px;
+    font-size: 0.7rem;
+    color: var(--grey);
+}
+
+#logo {
+    display: flex;
+
+}
+
+/* Search Section */
+
+#search {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+input#search_query {
+    color: var(--grey);
+    padding: 4px 12px;
+    font-size: 1rem;
+    outline: none;
+    flex-grow: 1;
+    height: 32px;
+    border: 1px solid var(--grey);
+    box-shadow: inset 0 1px 4px var(--grey);
+    
+    border-radius: 2px 0 0 2px;
+}
+
+#search>button {
+    height: 32px;
+    border: 1px solid var(--grey);
+    padding: 4px 24px;
+    border-radius: 0 2px 2px 0;
+}
+
+#search>.mic {
+    margin: 0 8px;;
+}
+
+input#search_query:focus {
+    outline: 1px solid lightblue;
+}
+
+/* Profile Section */
+#profile {
+    display: flex;
+    align-items: center;
+}
+
+#profile .material-icons, #profile span {
+    padding: 0 8px;
+}
+
+#profile img {
+    height: 32px;
+    width: 32px;
+    /* object-fit: cover; */
+    border-radius: 50%;
+}
+
+/* Body Section */
+
+/* Videe Lists Section */
+.videos-container {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    row-gap: 24px;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.video {
+    width: 250px;
+}
+
+.extra_icons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.v_icon {
+    background-color: var(--black);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.v_icon span {
+    color: white;
+}
+
+.track {
+    height: unset;
+    width: unset;
+    padding: 4px;
+    margin-top: auto;
+
+}
+
+.channel_icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.channel_icon img {
+    width: 100%;
+}
+
+.channel_info {
+    margin-left: 12px;
+}
+
+.channel_info span {
+    font-size: 0.75rem;
+}
+
+.v_info {
+    display: flex;
+    justify-content: center;
+}
