@@ -2,6 +2,7 @@
     --black: #030303;
     --grey: #606060;
     --accent: rgb(0, 0, 0, 5%);
+    --accent-dark: rgb(0, 0, 0, 30%);
     --red: #ff0000;
     --red-text: #c00;
 }
@@ -23,18 +24,19 @@ main {
 
 #body {
     display: flex;
-    height: 100%;
+    overflow: hidden;
 }
 
 aside {
     background-color: red;
     height: 100%;
     width: 230px;
+    /* overflow-y: scroll; */
 }
 
 #content {
+    width: 100%;
     height: 100%;
-    flex-grow: 1;
     overflow-y: scroll;
 }
 
@@ -44,7 +46,7 @@ header {
     align-items: center;
     padding: 8px 24px;
 
-    background-color: chartreuse;
+    background-color: #ffffff;
 }
 
 .svg-logo {
@@ -80,15 +82,15 @@ input#search_query {
     outline: none;
     flex-grow: 1;
     height: 32px;
-    border: 1px solid var(--grey);
-    box-shadow: inset 0 1px 4px var(--grey);
+    border: 1px solid var(--accent-dark);
+    box-shadow: inset 0 1px 2px var(--accent-dark);
     
     border-radius: 2px 0 0 2px;
 }
 
 #search>button {
     height: 32px;
-    border: 1px solid var(--grey);
+    border: 1px solid var(--accent-dark);
     padding: 4px 24px;
     border-radius: 0 2px 2px 0;
 }
@@ -98,7 +100,7 @@ input#search_query {
 }
 
 input#search_query:focus {
-    outline: 1px solid lightblue;
+    border: 1px solid #1c62b9;
 }
 
 /* Profile Section */
@@ -119,12 +121,18 @@ input#search_query:focus {
 }
 
 /* Body Section */
+#tags-container {
+    height: 50px;
+    border-top: 1px solid var(--accent-dark);
+    border-bottom: 1px solid var(--accent-dark);
+
+}
 
 /* Videe Lists Section */
 .videos-container {
     padding: 24px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 12px;
     row-gap: 24px;
 }
@@ -138,18 +146,18 @@ input#search_query:focus {
 }
 
 .video {
-    width: 250px;
+    min-width: 250px;
 }
 
 .extra_icons {
     position: absolute;
     top: 8px;
     right: 8px;
-    bottom: 12px;
+    bottom: 8px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
+    
 }
 
 .v_icon {
@@ -160,6 +168,7 @@ input#search_query:focus {
     justify-content: center;
     align-items: center;
     margin-bottom: 4px;
+    border-radius: 4px;
 }
 
 .v_icon span {
@@ -171,7 +180,7 @@ input#search_query:focus {
     width: unset;
     padding: 4px;
     margin-top: auto;
-
+    margin-bottom: 0;
 }
 
 .channel_icon {
@@ -195,5 +204,5 @@ input#search_query:focus {
 
 .v_info {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
